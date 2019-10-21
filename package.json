@@ -1,0 +1,28 @@
+{
+  "name": "poc-serial",
+  "version": "0.1.0",
+  "description": "PoC for a serial port device.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erodac/electron-serial-monitor.git"
+  },
+  "keywords": [
+    "PoC",
+    "Electron",
+    "Serial",
+    "Port"
+  ],
+  "author": "Alan Cadore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erodac/electron-serial-monitor/issues"
+  },
+  "homepage": "https://github.com/erodac/electron-serial-monitor#readme",
+  "devDependencies": {
+    "electron": "^6.0.12"
+  }
+}
