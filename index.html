@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Electron demo</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    Node: <script>document.write(process.versions.node)</script><br>    
+    Chrome: <script>document.write(process.versions.chrome)</script><br>
+    Electron: <script>document.write(process.versions.electron)</script><br>.
+    <div id="error"></div>
+    <div id="ports"></div>
+    LED:
+    <button id="turn-on">On</button>
+    <button id="turn-off">Off</button>
+</body>
+
+<script src="renderer.js"></script>
+
+</html>
