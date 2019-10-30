@@ -2,18 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Electron demo</title>
+    <title>Serial Monitor</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    Node: <script>document.write(process.versions.node)</script><br>    
-    Chrome: <script>document.write(process.versions.chrome)</script><br>
-    Electron: <script>document.write(process.versions.electron)</script><br>.
+    <h3>Serial Devices Connected:</h3>
     <div id="error"></div>
     <div id="ports"></div>
     LED:
     <button id="turn-on">On</button>
-    <button id="turn-off">Off</button>
+    <button id="turn-off">Off</button><br>
+    <br>
+    <h3>Received Bytes From Serial Port:</h3>
+    <textarea id="receivedBytes" rows="8" cols="25"></textarea>
 </body>
 
 <script src="renderer.js"></script>

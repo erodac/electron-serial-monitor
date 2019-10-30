@@ -6,7 +6,8 @@ const byteLength = require('@serialport/parser-byte-length');
 const parser = serialcomm.pipe(new byteLength({ length: 1 }));
 
 function onData(data) {
-    console.log(parseInt('0x' + data.toString('hex')));
+    document.getElementById('receivedBytes').value += parseInt('0x' + data.toString('hex')) + "\n";
+    document.getElementById('receivedBytes').scrollTop = document.getElementById('receivedBytes').scrollHeight;
 }
 
 function onSerialOpen() {
