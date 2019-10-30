@@ -2,11 +2,11 @@ const serialport = require('serialport')
 const createTable = require('data-table')
 
 var serialcomm = new serialport('COM5', { baudRate: 9600 });
-const Readline = require('@serialport/parser-readline');
-const parser = serialcomm.pipe(new Readline({ delimiter: '\r\n' }));
+const byteLength = require('@serialport/parser-byte-length');
+const parser = serialcomm.pipe(new byteLength({ length: 1 }));
 
 function onData(data) {
-    console.log(data);
+    console.log(parseInt('0x' + data.toString('hex')));
 }
 
 function onSerialOpen() {
