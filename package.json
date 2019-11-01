@@ -24,10 +24,12 @@
   "homepage": "https://github.com/erodac/electron-serial-monitor#readme",
   "devDependencies": {
     "electron": "^6.0.12",
+    "electron-builder": "^22.1.0",
     "electron-rebuild": "^1.8.6"
   },
   "dependencies": {
     "data-table": "^2.0.0",
+    "electron-updater": "^4.2.0",
     "serialport": "^7.1.5"
   }
 }

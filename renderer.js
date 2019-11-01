@@ -1,5 +1,7 @@
 const serialport = require('serialport')
 const createTable = require('data-table')
+const appVersion = document.getElementById('version')
+const { ipcRenderer } = require('electron')
 
 var serialcomm = new serialport('COM5', { baudRate: 9600 });
 const byteLength = require('@serialport/parser-byte-length');
@@ -54,3 +56,9 @@ document.getElementById('turn-on').onclick = function() {
 document.getElementById('turn-off').onclick = function() {
     writeData('L');
 };
+
+ipcRenderer.send('app_version');
+ipcRenderer.on('app_version', (event, arg) => {
+    ipcRenderer.removeAllListeners('app_version');
+    appVersion.innerHTML = 'Software Version: ' + arg.version;
+})
