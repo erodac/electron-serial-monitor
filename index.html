@@ -2,18 +2,39 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Electron demo</title>
+    <title>Serial Monitor</title>
+    <style>
+        #notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 200px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    Node: <script>document.write(process.versions.node)</script><br>    
-    Chrome: <script>document.write(process.versions.chrome)</script><br>
-    Electron: <script>document.write(process.versions.electron)</script><br>.
+    <h4 id="version"></h4>
+    <div id="notification" class="hidden">
+        <p id="message"></p>
+        <button id="close-button" onclick="closeNotification()">Close</button>
+        <button id="restart-button" onclick="restartApp()" class="hidden">Restart</button>
+    </div>
+    <h3>Serial Devices Connected:</h3>
     <div id="error"></div>
     <div id="ports"></div>
     LED:
     <button id="turn-on">On</button>
-    <button id="turn-off">Off</button>
+    <button id="turn-off">Off</button><br>
+    <br>
+    <h3>Received Bytes From Serial Port:</h3>
+    <textarea id="receivedBytes" rows="8" cols="25"></textarea>
 </body>
 
 <script src="renderer.js"></script>

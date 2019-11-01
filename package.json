@@ -4,11 +4,13 @@
   "description": "PoC for a serial port device.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erodac/electron-serial-monitor.git"
+    "url": "https://github.com/erodac/electron-serial-monitor.git"
   },
   "keywords": [
     "PoC",
@@ -24,10 +26,12 @@
   "homepage": "https://github.com/erodac/electron-serial-monitor#readme",
   "devDependencies": {
     "electron": "^6.0.12",
+    "electron-builder": "^22.1.0",
     "electron-rebuild": "^1.8.6"
   },
   "dependencies": {
     "data-table": "^2.0.0",
+    "electron-updater": "^4.2.0",
     "serialport": "^7.1.5"
   }
 }
