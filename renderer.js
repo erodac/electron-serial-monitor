@@ -12,7 +12,7 @@ const message = document.getElementById('message')
 const restartButton = document.getElementById('restart-button');
 
 function onData(data) {
-    document.getElementById('receivedBytes').value += parseInt('0x' + data.toString('hex')) + "\n";
+    document.getElementById('receivedBytes').value += '0x' + data.toString('hex') + "\n";
     document.getElementById('receivedBytes').scrollTop = document.getElementById('receivedBytes').scrollHeight;
 }
 
